@@ -1,0 +1,30 @@
+###########################################
+# Syntax Coloring Map For Excelsior_Light
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+ELight	KEYWORD1
+EL	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+SensorSetup	KEYWORD2
+SensorWert	KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
+
+OFF	LITERAL1
+WHITE	LITERAL1
+RED	LITERAL1
+GREED	LITERAL1
+BLUE	LITERAL1
+CYAN	LITERAL1
+MAGENTA	LITERAL1
+YELLOW	LITERAL1
