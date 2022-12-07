@@ -10,9 +10,10 @@ ELight::ELight(int red, int green, int blue, int signal){       //ports for the 
 long ELight::readSensor(int color, bool percent){
     int output[3];
     long values[3];
+    
+    bool single = !percent;                           //if percent is fales only a single value will be determined
 
     for(int i = 0; i < 3; i++){
-        bool single = !percent;                           //if percent is fales only a single value will be determined
         switch (color){                                   //determines which ports need to be set high or low to give the correct color and sets the next color in case a percentage value is wanted
             case WHITE:     output = {HIGH, HIGH, HIGH}; single = true;     break;          //For white and off there can't be a percentage determined by different colors, therefore only a single value is needed 
             case RED:       output = {HIGH, LOW , LOW }; color = GREEN;     break;
