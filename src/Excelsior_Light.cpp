@@ -30,7 +30,7 @@ long ELight::readSensor(int color, bool percent){
         delay(_lightDelay);                                 //small delay to make sure the colors have changed
         values[i] = 1024 - analogRead(_ports[3]);           //reading the sensor
 
-        if(stop){                                           //there are no procentages for White, since the color wouldn't switch
+        if(single){                                           //there are no procentages for White, since the color wouldn't switch
             if(percent)                                     //in case somebody still wants a value between 0 and 100 instead of 0 and 1024, but the color is WHITE or OFF
                 values[0] = 100L * values[0] / 1024;              
             break;
