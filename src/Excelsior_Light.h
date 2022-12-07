@@ -19,9 +19,9 @@ class ELight{
     public:
         ELight(int red, int green, int blue, int signal);
         void changeLightDelay(int delay);
-        int  readSensor() {readSensor(WHITE,false)};
-        int  readSensor(int color) {readSensor(color,false)};
-        int  readSensor(int color, bool percent);
+        long readSensor() {readSensor(WHITE,false)};
+        long readSensor(int color) {readSensor(color,false)};
+        long readSensor(int color, bool percent);
     
     private:        
         int _ports[4];
