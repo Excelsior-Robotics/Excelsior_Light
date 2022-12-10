@@ -15,17 +15,21 @@ using namespace std;
 #define MAGENTA      6
 #define YELLOW       7
 
-class ELight{
+class Excelsior_Light{
     public:
-        ELight(int red, int green, int blue, int signal);
+        Excelsior_Light() : _ports{0,1,2,3} {};             //should only be used to redefine the sensorInput later on in the program
+        Excelsior_Light(int red, int green, int blue, int signal) : _ports{red, green, blue, signal} {};
+        Excelsior_Light(Excelsior_Light const&) = default;
+        Excelsior_Light& operator=(Excelsior_Light other);
+
         void changeLightDelay(int delay);
-        long readSensor() {readSensor(WHITE,false)};
-        long readSensor(int color) {readSensor(color,false)};
-        long readSensor(int color, bool percent);
+        long read() { return read(WHITE,false); };
+        long read(int color) { return read(color,false); };
+        long read(int color, bool percent);
     
     private:        
         int _ports[4];
         int _lightDelay = 1;                                  //not realy neccessary to have a higher number, as even 1 millisecond doesnt reduce the quality of the brightnesvalue
-}
+};
 
 #endif
