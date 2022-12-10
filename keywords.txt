@@ -6,15 +6,13 @@
 # Datatypes (KEYWORD1)
 ###########################################
 
-ELight	KEYWORD1
-EL	KEYWORD1
+Excelsior_Light	KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
 ###########################################
 
-SensorSetup	KEYWORD2
-SensorWert	KEYWORD2
+read	KEYWORD2
 
 ###########################################
 # Constants (LITERAL1)
