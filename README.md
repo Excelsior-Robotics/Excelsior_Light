@@ -1,5 +1,6 @@
 # Excelsior_Light
 <img src="Logo/Logo_small.jpg" alt="Logo" width="200"/>
+
 ## Excelsior_Light - an Arduino library to enable easy use of the Excelsior-Lightsensor
 
 ### Version 1.0.0
