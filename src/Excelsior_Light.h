@@ -22,14 +22,27 @@ class Excelsior_Light{
         Excelsior_Light(Excelsior_Light const&) = default;
         Excelsior_Light& operator=(Excelsior_Light other);
 
-        void changeLightDelay(int delay);
-        long read() { return read(WHITE,false); };
-        long read(int color) { return read(color,false); };
-        long read(int color, bool percent);
-    
-    private:        
+        long read()                                                                                 { return read(WHITE,false,1); };                            
+        long read(int color)                                                                        { return read(color,false,1); };
+        long read(int color, bool percent)                                                          { return read(WHITE,percent,1); };
+        long read(int color, bool percent, unsigned int lightDelay);     
+
+        long readHSV(int hue, int saturation, int value)                                            { return readHSV(hue, saturation, value, false, 1);};          
+        long readHSV(int hue, int saturation, int value, bool percent)                              { return readHSV(hue, saturation, value, percent, 1);};
+        long readHSV(int hue, int saturation, int value, bool percent, unsigned int lightDelay)     { int hsv[] = {hue, saturation, value}; return readHSV(hsv, percent, lightDelay);};
+        long readHSV(int* hsv, bool percent, unsigned int lightDelay);                              
+
+        long readRGB(int red, int blue, int green)                                                  { return readRGB(red, green, blue, false, 1);};          
+        long readRGB(int red, int blue, int green, bool percent)                                    { return readRGB(red, green, blue, percent, 1);};
+        long readRGB(int red, int blue, int green, bool percent, unsigned int lightDelay)           { int rgb[] = {red, green, blue}; return readRGB(rgb, percent, lightDelay);};
+        long readRGB(int* rgb, bool percent, unsigned int lightDelay);
+
+    private: 
+        void _calcNextTriadic(int* color);
+        void _RGBtoHSV(int* color);
+        void _HSVtoRGB(int* color);
+
         int _ports[4];
-        int _lightDelay = 1;                                  //not realy neccessary to have a higher number, as even 1 millisecond doesnt reduce the quality of the brightnesvalue
 };
 
 #endif

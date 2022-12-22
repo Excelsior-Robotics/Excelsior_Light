@@ -13,6 +13,8 @@ Excelsior_Light	KEYWORD1
 ###########################################
 
 read	KEYWORD2
+readHSV	KEYWORD2
+readRGB	KEYWORD2
 
 ###########################################
 # Constants (LITERAL1)
