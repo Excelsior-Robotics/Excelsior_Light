@@ -11,3 +11,6 @@
 ### Version 1.0.2
 - Added readRGB and readHSV to enable the use of any color as the color of the LED
 - Added the ability to get dynamic percentage values for custom colors by calculating the next Triad along the color wheel
+### Version 1.0.3
+- Removed readHSV in favour of readHue, since there is no point in not reading at full brightness
+- Bug Fixes
